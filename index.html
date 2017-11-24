@@ -13,23 +13,42 @@
     <header id="showcase">
         <h1>Welcome to the Beach</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veniam est temporibus sed, repudiandae earum.</p>
-        <a href="#" class="button">Read More</a>
+        <a href="#content" class="button">Read More</a>
     </header>
-    <section id="section-a">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis sit labore illo voluptates vero, repellat quibusdam eius ut, quos possimus perspiciatis facilis nisi ipsam maxime magni atque autem, culpa magnam aperiam in iusto eum facere alias?
-            Eius laborum eum nisi quasi deserunt aliquid error, quos corporis odit eaque ex, accusantium harum quaerat magnam esse repellat, quae maxime iure rem. Numquam delectus vero illo vitae quam, eos asperiores laudantium quidem ullam exercitationem
-            quo enim tempore sit quaerat dicta fugiat odio aspernatur excepturi. Saepe, quas earum. Mollitia unde sed impedit voluptatibus? Dolor illum, explicabo reiciendis fuga reprehenderit hic doloribus delectus sunt dicta.</p>
-    </section>
-    <section id="section-b">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis sit labore illo voluptates vero, repellat quibusdam eius ut, quos possimus perspiciatis facilis nisi ipsam maxime magni atque autem, culpa magnam aperiam in iusto eum facere alias?
-            Eius laborum eum nisi quasi deserunt aliquid error, quos corporis odit eaque ex, accusantium harum quaerat magnam esse repellat, quae maxime iure rem. Numquam delectus vero illo vitae quam, eos asperiores laudantium quidem ullam exercitationem
-            quo enim tempore sit quaerat dicta fugiat odio aspernatur excepturi. Saepe, quas earum. Mollitia unde sed impedit voluptatibus? Dolor illum, explicabo reiciendis fuga reprehenderit hic doloribus delectus sunt dicta.</p>
-    </section>
-    <section id="section-c">
-        <div class="box1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium blanditiis debitis similique voluptatum, numquam ducimus quidem ea error? Officiis, quas!</div>
-        <div class="box2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium blanditiis debitis similique voluptatum, numquam ducimus quidem ea error? Officiis, quas!</div>
-        <div class="box3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium blanditiis debitis similique voluptatum, numquam ducimus quidem ea error? Officiis, quas!</div>
-    </section>
+    <span id="content">
+        <section id="section-a">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis sit labore illo voluptates vero, repellat quibusdam eius ut, quos possimus perspiciatis facilis nisi ipsam maxime magni atque autem, culpa magnam aperiam in iusto eum facere alias?
+                Eius laborum eum nisi quasi deserunt aliquid error, quos corporis odit eaque ex, accusantium harum quaerat magnam esse repellat, quae maxime iure rem. Numquam delectus vero illo vitae quam, eos asperiores laudantium quidem ullam exercitationem
+                quo enim tempore sit quaerat dicta fugiat odio aspernatur excepturi. Saepe, quas earum. Mollitia unde sed impedit voluptatibus? Dolor illum, explicabo reiciendis fuga reprehenderit hic doloribus delectus sunt dicta.</p>
+        </section>
+        <section id="section-b">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis sit labore illo voluptates vero, repellat quibusdam eius ut, quos possimus perspiciatis facilis nisi ipsam maxime magni atque autem, culpa magnam aperiam in iusto eum facere alias?
+                Eius laborum eum nisi quasi deserunt aliquid error, quos corporis odit eaque ex, accusantium harum quaerat magnam esse repellat, quae maxime iure rem. Numquam delectus vero illo vitae quam, eos asperiores laudantium quidem ullam exercitationem
+                quo enim tempore sit quaerat dicta fugiat odio aspernatur excepturi. Saepe, quas earum. Mollitia unde sed impedit voluptatibus? Dolor illum, explicabo reiciendis fuga reprehenderit hic doloribus delectus sunt dicta.</p>
+        </section>
+        <section id="section-c">
+            <div class="box1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium blanditiis debitis similique voluptatum, numquam ducimus quidem ea error? Officiis, quas!</div>
+            <div class="box2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium blanditiis debitis similique voluptatum, numquam ducimus quidem ea error? Officiis, quas!</div>
+            <div class="box3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium blanditiis debitis similique voluptatum, numquam ducimus quidem ea error? Officiis, quas!</div>
+        </section>
+    </span>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $('a[href*="#"]:not([href="#"])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
